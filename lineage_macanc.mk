@@ -14,6 +14,11 @@ $(call inherit-product, device/oneplus/macanc/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Gapps
+WITH_GMS := true
+TARGET_GAPPS_VARIANT := core
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+
 PRODUCT_NAME := lineage_macanc
 PRODUCT_DEVICE := macanc
 PRODUCT_MANUFACTURER := OnePlus

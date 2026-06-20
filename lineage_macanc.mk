@@ -29,3 +29,34 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=PLR110 \
     SystemDevice=OP6117L1 \
     SystemName=PLR110
+
+# AxionOS stuff
+AXION_MAINTAINER := blazerpaul15
+AXION_PROCESSOR := Snapdragon_8_Gen_5
+AXION_CAMERA_REAR_INFO := 50,8
+AXION_CAMERA_FRONT_INFO := 16
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# AxionFX
+TARGET_INCLUDE_AXFX := true
+
+# Lineage prebuilts
+ifneq ($(WITH_GMS),true)
+TARGET_INCLUDES_LOS_PREBUILTS := true
+endif
+
+# Refresh rate list
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120,144,165
+
+# Charging
+BYPASS_CHARGE_SUPPORTED := true
+BYPASS_CHARGE_TOGGLE_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
+
+# High Brightness Mode (HBM)
+HBM_SUPPORTED := true
+HBM_NODE := /sys/class/backlight/panel0-backlight/hbm_mode
+
+# Flashlight strength
+# TORCH_STR_SUPPORTED := true
